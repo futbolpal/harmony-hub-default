@@ -1,0 +1,24 @@
+{
+  "name": "harmonyhub-default",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "harmonyhub-api": "^1.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/futbolpal/harmony-hub-default.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/futbolpal/harmony-hub-default/issues"
+  },
+  "homepage": "https://github.com/futbolpal/harmony-hub-default#readme"
+}
