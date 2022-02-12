@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { HarmonyHub } = require('harmonyhub-api')
 const HUB_HOST = '192.168.1.163';
 const HUB_REMOTE_ID = '17979795';
