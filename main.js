@@ -4,6 +4,7 @@ const { Explorer } = require('@harmonyhub/discover')
 const { HarmonyHub } = require('harmonyhub-api')
 
 const HUB_NAME = process.env.HUB_NAME;
+const HUB_DEFAULT_ACTIVITY_NAME = process.env.HUB_DEFAULT_ACTIVITY_NAME || 'Default'
 const HUB_ACTIVITY_OFF = '-1';
 
 const discover = new Explorer(51000);
@@ -19,7 +20,7 @@ discover.on(Explorer.Events.ONLINE, async (discoveredHub) => {
   const config = await hub.connect();
   console.log("Hub connected!");
 
-  const getDefaultActivityId = async () => config.activity.find((a) => a.label === 'Default').id
+  const getDefaultActivityId = async () => config.activity.find((a) => a.label === HUB_DEFAULT_ACTIVITY_NAME).id
   const getActivityById = (activityId) => config.activity.find((a) => a.id === activityId)
   const activity = await hub.getCurrentActivity();
   const defaultActivity = await getDefaultActivityId();
