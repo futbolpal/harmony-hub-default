@@ -28,8 +28,6 @@ discover.on(Explorer.Events.ONLINE, async (discoveredHub) => {
   console.log("Current activity:", getActivityById(activity).label);
   hub.on('close', () => {
     process.exit();
-//    console.log("Reconnecting");
-//    hub.connect()
   });
   hub.on('message', async (message) => {
     if(message.data && message.data.activityId) {
@@ -44,7 +42,10 @@ discover.on(Explorer.Events.ONLINE, async (discoveredHub) => {
     console.log("Setting activity to Default");
     await hub.startActivity(defaultActivity);
   }
-
+  setInterval(() => {
+    console.log("Pinging hub");
+    hub.ping()
+  }, 30000);
 });
 
 discover.on(Explorer.Events.OFFLINE, (hub) => {
