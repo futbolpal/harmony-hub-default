@@ -27,8 +27,9 @@ discover.on(Explorer.Events.ONLINE, async (discoveredHub) => {
 
   console.log("Current activity:", getActivityById(activity).label);
   hub.on('close', () => {
-    console.log("Reconnecting");
-    hub.connect()
+    process.exit();
+//    console.log("Reconnecting");
+//    hub.connect()
   });
   hub.on('message', async (message) => {
     if(message.data && message.data.activityId) {
